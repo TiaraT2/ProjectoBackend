@@ -1,0 +1,37 @@
+[
+  {
+    "title": "café",
+    "photo": "img_cafe.jpg",
+    "price": 20,
+    "stock": 20,
+    "id": "5dcac44a8f38676421bb75ca"
+  },
+  {
+    "title": "té",
+    "photo": "img_te.jpg",
+    "price": 15,
+    "stock": 30,
+    "id": "44c40a7a1819b44dfce64a00"
+  },
+  {
+    "title": "galletas",
+    "photo": "img_galletas.jpg",
+    "price": 10,
+    "stock": 10,
+    "id": "fc34f7c0bfb8f954fd2442e5"
+  },
+  {
+    "id": "79c75d60c74bd8cb83d74b91",
+    "title": "a",
+    "photo": "a",
+    "price": "a",
+    "stock": 1
+  },
+  {
+    "id": "70a667b551b200a092eeaa2e",
+    "title": "a",
+    "photo": "a",
+    "price": "a",
+    "stock": 1
+  }
+]
