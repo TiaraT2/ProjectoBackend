@@ -1,0 +1,16 @@
+[
+  {
+    "id": "c3fc47166d235fd0cc0ad4c1",
+    "uid": "fdd3a9bfe8246ccec3181344",
+    "pid": "44c40a7a1819b44dfce64a00",
+    "quantity": 2,
+    "state": "Shipped"
+  },
+  {
+    "id": "91c27015744a4b6e17fe5029",
+    "uid": "fdd3a9bfe8246ccec3181344",
+    "pid": "44c40a7a1819b44dfce64a00",
+    "quantity": 2,
+    "state": "en_proceso"
+  }
+]
