@@ -1,1 +1,1 @@
-# ProjectoBackend
+Se usó socket.io y handlebars para hacer una conexión frontend y backend para la creación de un producto en la página.

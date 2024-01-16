@@ -1,0 +1,15 @@
+<div class="fondo">
+  <h1>Productos</h1>
+  <div class="d-flex flex-wrap justify-content-evenly" id="products">
+    <div class="card" style="width: 18rem;">
+      <img src="{{this.photo}}" class="card-img-top img-thumbnail" alt="..." />
+      <div class="card-body">
+        <h5 class="card-title">{{this.title}}</h5>
+        <p>Stock: {{this.stock}}</p>
+        <p>Precio: ${{this.price}}</p>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="/socket.io/socket.io.js"></script>
+<script src="/real.js"></script>

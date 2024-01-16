@@ -1,0 +1,30 @@
+[
+  {
+    "title": "café",
+    "photo": "https://i.postimg.cc/zBqH86BZ/imagen-2024-01-15-181131317.png",
+    "price": 20,
+    "stock": 20,
+    "id": "5dcac44a8f38676421bb75ca"
+  },
+  {
+    "title": "té",
+    "photo": "https://i.postimg.cc/6qYmYk79/imagen-2024-01-15-181319083.png",
+    "price": 15,
+    "stock": 30,
+    "id": "44c40a7a1819b44dfce64a00"
+  },
+  {
+    "title": "galletas",
+    "photo": "https://i.postimg.cc/j5sbNqPH/imagen-2024-01-15-181409290.png",
+    "price": 10,
+    "stock": 10,
+    "id": "fc34f7c0bfb8f954fd2442e5"
+  },
+  {
+    "id": "cc830df2dea59093e7a12cad",
+    "title": "cereal",
+    "photo": "https://i.postimg.cc/4dFNHCp0/imagen-2024-01-16-154604010.png",
+    "price": "5",
+    "stock": "6"
+  }
+]

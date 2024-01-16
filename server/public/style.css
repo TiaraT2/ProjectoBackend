@@ -1,0 +1,159 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  min-height: 100vh;
+  background-color: #fecea8;
+}
+nav {
+  background-color: #ef8c86;
+  margin-bottom: 20px;
+}
+.nav-link {
+  color: #2a363b;
+}
+
+.card {
+  color: #e9abb1;
+  font-size: 20px;
+  margin-bottom: 30px;
+}
+.card-body {
+  padding: 10px;
+}
+p {
+  margin: 5px;
+}
+
+h5 {
+  font-size: 25px;
+  text-decoration: underline;
+}
+
+.btn {
+  background-color: #ffeba7;
+}
+
+.box {
+  width: auto;
+  padding: 40px;
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #ffeba7;
+  text-align: center;
+  border-radius: 15%;
+}
+.box h1 {
+  color: #2a363b;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+.box input[type="text"],
+.box input[type="password"] {
+  border: 0;
+  background: none;
+  display: block;
+  margin: 20px auto;
+  text-align: center;
+  border: 2px solid #ef8c86;
+  padding: 14px 10px;
+  width: 200px;
+  outline: none;
+  color: white;
+  border-radius: 24px;
+  transition: 0.25s;
+}
+.box input[type="text"]:focus,
+.box input[type="password"]:focus {
+  width: 280px;
+  border-color: #e84a5f;
+}
+.box input[type="submit"] {
+  border: 0;
+  background: none;
+  display: block;
+  margin: 20px auto;
+  text-align: center;
+  border: 2px solid #e84a5f;
+  padding: 14px 40px;
+  outline: none;
+  color: #2a363b;
+  border-radius: 24px;
+  transition: 0.25s;
+  cursor: pointer;
+}
+.box input[type="submit"]:hover {
+  background: #e84a5f;
+}
+
+.site-footer {
+  background-color: #ef8c86;
+  color: #2a363b;
+  padding: 20px 0;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+.logo {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.container {
+  text-align: center;
+}
+
+main {
+  flex: 1;
+  padding-bottom: 65px;
+}
+
+/* Agregado para el formulario */
+form {
+  width: 300px;
+  padding: 20px;
+  margin: 0 auto;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: #ffeba7;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  color: #2a363b;
+}
+
+input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 16px;
+  box-sizing: border-box;
+}
+
+input[type="submit"] {
+  background-color: #ccabd8;
+  color: #2a363b;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: #ccabd8;
+}
+
+.fondo {
+  width: 80%;
+  margin-left: 10%;
+  margin-bottom: 20px;
+  background-color: #ffeba7;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}

@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Juan",
+    "photo": "img_juan.jpg",
+    "email": "juan@example.com",
+    "id": "d09e1483c64d21b780b0ff9e"
+  },
+  {
+    "name": "María",
+    "photo": "img_maria.jpg",
+    "email": "maria@example.com",
+    "id": "fdd3a9bfe8246ccec3181344"
+  },
+  {
+    "name": "Carlos",
+    "photo": "img_carlos.jpg",
+    "email": "carlos@example.com",
+    "id": "9fb505b5e126a4662d3f7037"
+  },
+  {
+    "id": "134d86d75994876184a46f02",
+    "email": "n",
+    "photo": "a",
+    "name": "Marta"
+  }
+]
