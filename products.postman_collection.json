@@ -1,0 +1,144 @@
+{
+	"info": {
+		"_postman_id": "fad18c6a-0e63-4d49-8162-ef6933f88fee",
+		"name": "products",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "32166531"
+	},
+	"item": [
+		{
+			"name": "create",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Té\",\r\n    \"photo\": \"te.png\",\r\n    \"price\": 5,\r\n    \"stock\": 4\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:{{PORT}}/api/products",
+					"host": [
+						"localhost"
+					],
+					"port": "{{PORT}}",
+					"path": [
+						"api",
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "read",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:{{PORT}}/api/products",
+					"host": [
+						"localhost"
+					],
+					"port": "{{PORT}}",
+					"path": [
+						"api",
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "readOne",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:{{PORT}}/api/products/:pid",
+					"host": [
+						"localhost"
+					],
+					"port": "{{PORT}}",
+					"path": [
+						"api",
+						"products",
+						":pid"
+					],
+					"variable": [
+						{
+							"key": "pid",
+							"value": "44c40a7a1819b44dfce64a00"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "destroy",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:{{PORT}}/api/products/:pid",
+					"host": [
+						"localhost"
+					],
+					"port": "{{PORT}}",
+					"path": [
+						"api",
+						"products",
+						":pid"
+					],
+					"variable": [
+						{
+							"key": "pid",
+							"value": "79c75d60c74bd8cb83d74b91"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "new stock",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"stock\": 2\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:{{PORT}}/api/products/:pid",
+					"host": [
+						"localhost"
+					],
+					"port": "{{PORT}}",
+					"path": [
+						"api",
+						"products",
+						":pid"
+					],
+					"variable": [
+						{
+							"key": "pid",
+							"value": "65c4d57f77f8d87077959693"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
