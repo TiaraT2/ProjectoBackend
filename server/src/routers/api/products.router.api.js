@@ -1,11 +1,13 @@
+//import ManagerProduct from "../../data/fs/products.fs.js";
 import { Router } from "express";
-import ManagerProduct from "../../data/fs/products.fs.js";
+import { ManagerProduct } from "../../data/mongo/manager.mongo.js";
+
 const productsRouter = Router();
 
 productsRouter.post("/", async (req, res, next) => {
   try {
     const data = req.body;
-    const response = await ManagerProduct.createProduct(data);
+    const response = await ManagerProduct.create(data);
     return res.json({
       statusCode: 201,
       response,
@@ -14,54 +16,85 @@ productsRouter.post("/", async (req, res, next) => {
     return next(error);
   }
 });
+
 productsRouter.get("/", async (req, res, next) => {
   try {
-    const all = await ManagerProduct.read();
-    return res.json({
-      statusCode: 200,
-      response: all,
-    });
+    const products = await ManagerProduct.read({});
+    if (products) {
+      return res.json({
+        statusCode: 200,
+        response: products,
+      });
+    } else {
+      return res.json({
+        statusCode: 404,
+        message: "Not found!",
+      });
+    }
   } catch (error) {
     return next(error);
   }
 });
+
 productsRouter.get("/:pid", async (req, res, next) => {
   try {
     const { pid } = req.params;
-    const one = await ManagerProduct.readOne(pid);
-    return res.json({
-      statusCode: 200,
-      response: one,
-    });
+    const product = await ManagerProduct.readOne(pid);
+    if (product) {
+      return res.json({
+        statusCode: 200,
+        response: product,
+      });
+    } else {
+      return res.json({
+        statusCode: 404,
+        message: "Not found!",
+      });
+    }
   } catch (error) {
     return next(error);
   }
 });
-productsRouter.put("/sell/:pid", async (req, res, next) => {
+
+productsRouter.put("/:pid", async (req, res, next) => {
   try {
     const { pid } = req.params;
-    const { quantity } = req.body;
-
-    const response = await ManagerProduct.sellProduct(quantity, pid);
-
-    return res.json({
-      statusCode: 200,
-      response,
-    });
+    const data = req.body;
+    const product = await ManagerProduct.update(pid, data);
+    if (product) {
+      return res.json({
+        statusCode: 200,
+        response: product,
+      });
+    } else {
+      return res.json({
+        statusCode: 404,
+        message: "Not found!",
+      });
+    }
   } catch (error) {
     return next(error);
   }
 });
+
 productsRouter.delete("/:pid", async (req, res, next) => {
   try {
     const { pid } = req.params;
-    const response = await ManagerProduct.destroy(pid);
-    return res.json({
-      statusCode: 200,
-      response,
-    });
+    const product = await ManagerProduct.destroy(pid);
+    if (product) {
+      return res.json({
+        statusCode: 200,
+        response: product,
+      });
+    } else {
+      return res.json({
+        statusCode: 404,
+        message: "Not found!",
+      });
+    }
   } catch (error) {
     return next(error);
   }
 });
+
 export default productsRouter;

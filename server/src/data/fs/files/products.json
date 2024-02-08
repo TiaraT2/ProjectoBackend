@@ -26,5 +26,12 @@
     "photo": "https://i.postimg.cc/4dFNHCp0/imagen-2024-01-16-154604010.png",
     "price": "5",
     "stock": "6"
+  },
+  {
+    "id": "f7104a019c4b9a70a08fa6b7",
+    "title": "Media luna",
+    "photo": "https://i.postimg.cc/zfdkH28G/imagen-2024-01-16-161305993.png",
+    "price": "12",
+    "stock": "6"
   }
 ]

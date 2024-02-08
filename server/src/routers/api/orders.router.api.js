@@ -1,5 +1,6 @@
 import { Router } from "express";
-import ManagerOrders from "../../data/fs/orders.fs.js";
+// import ManagerOrders from "../../data/fs/orders.fs.js";
+import { ManagerOrders } from "../../data/mongo/manager.mongo.js";
 const ordersRouter = Router();
 
 ordersRouter.post("/", async (req, res, next) => {
@@ -28,7 +29,7 @@ ordersRouter.get("/:uid", async (req, res, next) => {
   }
 });
 
-ordersRouter.put("/:oid", async (req, res) => {
+ordersRouter.put("/:oid", async (req, res, next) => {
   try {
     const { oid } = req.params;
     const { quantity, state } = req.body;
@@ -53,5 +54,36 @@ ordersRouter.delete("/:oid", async (req, res, next) => {
     return next(error);
   }
 });
+
+ordersRouter.get("/", async (req, res, next) => {
+  try {
+    const filter = req.query; 
+    const options = {
+      limit: req.query.limit || 20,
+      page: req.query.page || 1,
+    };
+    const response = await ManagerOrders.read({ filter, options });
+    return res.json({
+      statusCode: 200,
+      response,
+    });
+  } catch (error) {
+    return next(error);
+  }
+});
+
+ordersRouter.get("/total/:uid", async (req, res, next) => {
+  try {
+    const { uid } = req.params;
+    const total = await ManagerOrders.report(uid);
+    return res.json({
+      statusCode: 200,
+      total,
+    });
+  } catch (error) {
+    return next(error);
+  }
+});
+
 
 export default ordersRouter;

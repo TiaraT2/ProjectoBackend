@@ -1,1 +1,1 @@
-Se usó socket.io y handlebars para hacer una conexión frontend y backend para la creación de un producto en la página.
+Se implementó la base de datos mongo.
