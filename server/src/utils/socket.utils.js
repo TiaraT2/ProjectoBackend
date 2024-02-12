@@ -1,5 +1,6 @@
 import { socketServer } from "../../server.js";
-import ManagerProduct from "../data/fs/products.fs.js";
+//import ManagerProduct from "../data/fs/products.fs.js";
+import { ManagerProduct, ManagerUser } from "../data/mongo/manager.mongo.js";
 import propsProductUtils from "./propsProducts.utils.js";
 
 export default (socket) => {
