@@ -2,6 +2,7 @@ import Product from "./models/product.model.js";
 import User from "./models/user.model.js";
 import Order from "./models/order.model.js";
 import { Types } from "mongoose";
+import notFoundOne from "../../utils/notFoundOne.utils.js";
 
 class MongoManager {
   constructor(model) {
@@ -74,14 +75,10 @@ class MongoManager {
     }
   }
 
-  async readByEmail(filter) {
+  async readByEmail(email) {
     try {
-      const one = await this.model.find(filter);
-      if (!one) {
-        const error = new Error("there isn't elements");
-        error.statusCode = 404;
-        throw error;
-      }
+      const one = await this.model.findOne({ email });
+      notFoundOne(one);
       return one;
     } catch (error) {
       throw error;

@@ -5,12 +5,12 @@ const collection = "users";
 const schema = new Schema(
   {
     name: { type: String, required: true },
-    email: { type: String, required: true, unique: true },
+    email: { type: String, required: true, unique: true, index: true },
     photo: {
       type: String,
       default: "https://i.postimg.cc/zBxfQyFm/imagen-2024-02-07-094348898.png",
     },
-    //password: { type: String, required: true },
+    password: { type: String, required: true },
     //age: { type: Number, default: 18 },
   },
   { timestamps: true }

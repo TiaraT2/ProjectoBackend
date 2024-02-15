@@ -1,9 +1,21 @@
 import { Router } from "express";
 
-const registerView = Router();
+const sessionsRouter = Router();
 
-registerView.get("/register", (req, res) => {
-  res.render("register");
+sessionsRouter.get("/register", (req, res) => {
+  try {
+    return res.render("register");
+  } catch (error) {
+    return next(error);
+  }
 });
 
-export default registerView;
+sessionsRouter.get("/login", (req, res) => {
+  try {
+    return res.render("login");
+  } catch (error) {
+    return next(error);
+  }
+});
+
+export default sessionsRouter;

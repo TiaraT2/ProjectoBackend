@@ -1,10 +1,11 @@
 //import ManagerProduct from "../../data/fs/products.fs.js";
 import { Router } from "express";
 import { ManagerProduct } from "../../data/mongo/manager.mongo.js";
+import isAdmin from "../../middlewares/isAdmin.mid.js";
 
 const productsRouter = Router();
 
-productsRouter.post("/", async (req, res, next) => {
+productsRouter.post("/", isAdmin, async (req, res, next) => {
   try {
     const data = req.body;
     const response = await ManagerProduct.create(data);
@@ -21,10 +22,7 @@ productsRouter.get("/", async (req, res, next) => {
   try {
     const products = await ManagerProduct.read({});
     if (products) {
-      return res.json({
-        statusCode: 200,
-        response: products,
-      });
+      return res.render('real', { ManagerProduct: products });
     } else {
       return res.json({
         statusCode: 404,
@@ -35,6 +33,7 @@ productsRouter.get("/", async (req, res, next) => {
     return next(error);
   }
 });
+
 
 productsRouter.get("/", async (req, res, next) => {
   try {

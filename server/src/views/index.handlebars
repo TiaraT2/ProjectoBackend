@@ -10,29 +10,10 @@
       <p>Descubre nuestra deliciosa selección de productos frescos y sabrosos.
         Desde cafés especializados hasta exquisitos postres, tenemos algo para
         todos los amantes del buen café.</p>
-
-      <h3>Algunos de nuestros productos más vendidos</h3>
-
-      <div class="d-flex flex-wrap justify-content-evenly">
-        {{#each ManagerProduct}}
-          <div class="card" style="width: 18rem;">
-            <img
-              src="{{this.photo}}"
-              class="card-img-top img-thumbnail"
-              alt="..."
-            />
-            <div class="card-body">
-              <h5 class="card-title">{{this.title}}</h5>
-              <p>Stock: {{this.stock}}</p>
-              <p>Precio: ${{this.price}}</p>
-              <a href="#" class="btn">Agregar al carrito</a>
-            </div>
-          </div>
-        {{/each}}
-      </div>
+      <img
+        src="https://i.postimg.cc/xTmXQN88/imagen-2024-02-15-184022884.png"
+        alt="fotos de café"
+      />
     </div>
   </div>
 </main>
-
-<script src="/socket.io/socket.io.js"></script>
-<script src="/real.js"></script>

@@ -4,8 +4,6 @@ import { ManagerProduct, ManagerUser } from "../data/mongo/manager.mongo.js";
 import propsProductUtils from "./propsProducts.utils.js";
 
 export default (socket) => {
-  console.log("client " + socket.id + " connected");
-
   socket.emit("products", ManagerProduct.read());
 
   socket.on("new product", async (data) => {
