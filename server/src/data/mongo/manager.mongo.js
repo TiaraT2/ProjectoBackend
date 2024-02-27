@@ -20,7 +20,10 @@ class MongoManager {
 
   async read({ filter = {}, sortAndPaginate = {} } = {}) {
     try {
+      sortAndPaginate.limit = 20;
+
       const all = await this.model.paginate(filter, sortAndPaginate);
+
       if (all.totalPages === 0) {
         const error = new Error("there aren't elements");
         error.statusCode = 404;
@@ -78,7 +81,7 @@ class MongoManager {
   async readByEmail(email) {
     try {
       const one = await this.model.findOne({ email });
-      notFoundOne(one);
+      //notFoundOne(one);
       return one;
     } catch (error) {
       throw error;

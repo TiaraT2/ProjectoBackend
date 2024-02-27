@@ -12,45 +12,45 @@
     <title>Index</title>
   </head>
   <body>
-    <nav class="navbar">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="/">
-          <img
-            src="https://i.postimg.cc/D09pGQNF/imagen-2024-01-16-064326659.png"
-            alt="Logo"
-            width="85"
-            height="80"
-            class="d-inline-block align-text-top"
-          />
-          <div class="container">
-            <ul class="nav justify-content-center">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="/">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/products/real">Productos</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/products/form">Pide tu pedido
-                  personalizado</a>
-              </li>
-              {{#if user}}
-                <li class="nav-item">
-                  <a class="nav-link" href="/logout">Cerrar sesión</a>
-                </li>
-              {{else}}
-                <li class="nav-item">
-                  <a class="nav-link" href="/auth/register">Registrarse</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="/auth/login">Login</a>
-                </li>
-              {{/if}}
-            </ul>
-          </div>
-        </a>
-      </div>
-    </nav>
+ <nav class="navbar">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="/">
+      <img
+        src="https://i.postimg.cc/D09pGQNF/imagen-2024-01-16-064326659.png"
+        alt="Logo"
+        width="85"
+        height="80"
+        class="d-inline-block align-text-top"
+      />
+    </a>
+    <div class="container">
+      <ul class="nav justify-content-center">
+        <li class="nav-item">
+          <a class="nav-link btn fs-5 m-1" aria-current="page" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link btn fs-5 m-1" href="/products/real">Real</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link btn fs-5 m-1" href="/products/form" id="formButton">Form</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link btn fs-5 m-1" href="/orders" id="ordersButton">My cart</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link btn fs-5 m-1" href="/sessions/register" id="registerButton">Register</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link btn fs-5 m-1" href="/sessions/login" id="loginButton">Login</a>
+        </li>
+        <li class="nav-item">
+          <span class="nav-link btn fs-5 m-1" id="signout">Sign out</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
     {{{body}}}
     <footer class="site-footer">
       <div class="container">
@@ -62,5 +62,6 @@
       integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
       crossorigin="anonymous"
     ></script>
+    <script src="/scripts/signout.js"></script>
   </body>
 </html>

@@ -20,27 +20,10 @@ productsRouter.post("/", isAdmin, async (req, res, next) => {
 
 productsRouter.get("/", async (req, res, next) => {
   try {
-    const products = await ManagerProduct.read({});
-    if (products) {
-      return res.render('real', { ManagerProduct: products });
-    } else {
-      return res.json({
-        statusCode: 404,
-        message: "Not found!",
-      });
-    }
-  } catch (error) {
-    return next(error);
-  }
-});
-
-
-productsRouter.get("/", async (req, res, next) => {
-  try {
     const sortAndPaginate = {
       sort: { price: 1 },
       page: parseInt(req.query.page) || 1,
-      limit: parseInt(req.query.limit) || 10,
+      limit: 20, // Mostrar 20 productos por página
     };
 
     const filter = {};
@@ -53,10 +36,23 @@ productsRouter.get("/", async (req, res, next) => {
     }
 
     const products = await ManagerProduct.read({ filter, sortAndPaginate });
+    const totalProducts = await ManagerProduct.count(filter);
+
     if (products.length > 0) {
-      return res.json({
-        statusCode: 200,
-        response: products,
+      const pagination = {
+        page: sortAndPaginate.page,
+        pages: Array.from(
+          { length: Math.ceil(totalProducts / sortAndPaginate.limit) },
+          (_, i) => i + 1
+        ),
+      };
+
+      return res.render("products", {
+        response: {
+          products,
+          total: totalProducts,
+          pagination,
+        },
       });
     } else {
       return res.json({

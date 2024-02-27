@@ -1,0 +1,45 @@
+<main class="flex-grow-1 w-100 d-flex flex-column">
+    <h1 class="text-center pt-5 pb-3">Pedidos</h1>
+    {{#if message}}
+    <h1 class="text-center">{{message}}</h1>
+    {{else}}
+    <article class="d-flex flex-wrap justify-content-center" id="products">
+            {{#each orders}}
+                <div class=" w-100 d-flex justify-content-around align-items-center">
+                    <img src={{this.pid.photo}} style="height: 240px" class="" alt="{{each.title}}">
+                    <h5 class="">{{this.pid.title}}</h5>
+                    <h4>{{this.quantity}}</h4>
+                    <h4>${{this.pid.price}}</h4>
+                    <span
+            class="d-flex justify-content-center align-items-center m-0 p-2"
+            style="width: 60px;"
+          >
+            <img
+              class="deleteButton"
+              id={{this._id}}
+              src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAZlJREFUaEPtWTFOw0AQnO0RSPCEmIoWp4CUmAKQ+A0FD8iHECDFlCQFTgtNwhMAIR6wCKEgy4q1d3t3sSzW7e7s7szcybKX0POHej4/jEDXDgY5sDg8uSSiKwAHAHY8yXwCeCbi8eDp4dYT+5euJvA6PL1g5htt4zqOGOeDeXmnqaUmsMyLKYAjTdM1mFlWlceaWnoCw+ILjC1N0yaGgff9qtzT1NITyAuuN8yq0qvWMhC/6u3VtD5w6ACheCMQqmAoXnSg2UBzwWJi2u5Y6x0wAjHlB/D/HGgKGOvStRmjre/8HtA2cD1J2vpGwFVhKa9zB6QBQuNtAkQ7QqEDSngjICmUOm4OpFZYqm8OSAqljpsDqRWW6psDkkKp4+ZAaoWl+uaApFDqeHIHpA8WKS4JYAS0CknKr+La+tG+yFwH7ey3yiIv3gjYDR3UBe+z8PBx4BGAag3kMnQjZ5pV5cgF50wg5lJPHIzpLJtP7sU8wG/R/UsC1wD/rFW3XRp45HwAeCHG2Gdj6eyAxyAbTTUCG5V7TbPeO/AN+v+sQEsryjsAAAAASUVORK5CYII="
+            />
+          </span>
+                </div>
+            {{/each}}
+        </article>
+    </section>
+    
+    <span class="w-100 d-flex justify-content-center">
+        {{#if prev}}
+        <a
+            class="btn btn-primary fs-5 m-4 mt-0"
+            href="/orders?title={{filter}}&page={{prev}}"
+        >PREV</a>
+        {{/if}}
+        {{#if next}}
+        <a
+            class="btn btn-primary fs-5 m-4 mt-0"
+            href="/orders?title={{filter}}&page={{next}}"
+        >NEXT</a>
+        {{/if}} 
+    </span>
+    {{/if}}
+</main>
+
+<script src="/scripts/orders.js"></script>>

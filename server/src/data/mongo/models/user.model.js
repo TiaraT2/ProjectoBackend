@@ -6,6 +6,7 @@ const schema = new Schema(
   {
     name: { type: String, required: true },
     email: { type: String, required: true, unique: true, index: true },
+    role: { type: Number, default: 0 },
     photo: {
       type: String,
       default: "https://i.postimg.cc/zBxfQyFm/imagen-2024-02-07-094348898.png",

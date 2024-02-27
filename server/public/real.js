@@ -1,5 +1,6 @@
-const socket = io();
+console.log("socket");
 
+const socket = io();
 socket.on("products", (data) => {
   console.log(data);
   if (Array.isArray(data)) {
@@ -23,17 +24,19 @@ socket.on("products", (data) => {
   }
 });
 
-document.querySelector("#newProduct").addEventListener("submit", (event) => {
-  event.preventDefault();
-  const title = document.getElementById("title").value;
-  const photo = document.getElementById("photo").value;
-  const price = document.getElementById("price").value;
-  const stock = document.getElementById("stock").value;
-  const data = {};
-  title && (data.title = title);
-  photo && (data.photo = photo);
-  price && (data.price = price);
-  stock && (data.stock = stock);
-  socket.emit("newProduct", data);
-  alert("producto creado");
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelector("#newProduct").addEventListener("submit", (event) => {
+    event.preventDefault();
+    const title = document.getElementById("title").value;
+    const photo = document.getElementById("photo").value;
+    const price = document.getElementById("price").value;
+    const stock = document.getElementById("stock").value;
+    const data = {};
+    title && (data.title = title);
+    photo && (data.photo = photo);
+    price && (data.price = price);
+    stock && (data.stock = stock);
+    socket.emit("newProduct", data);
+    alert("producto creado");
+  });
 });

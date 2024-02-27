@@ -23,7 +23,7 @@ ordersRouter.get("/", async (req, res, next) => {
     const sortAndPaginate = {
       sort: { state: 1 },
       page: parseInt(req.query.page) || 1,
-      limit: parseInt(req.query.limit) || 10,
+      limit: parseInt(req.query.limit) || 20,
     };
 
     const filter = {};

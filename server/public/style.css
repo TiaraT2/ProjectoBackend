@@ -3,14 +3,17 @@
   padding: 0;
   box-sizing: border-box;
 }
+
 body {
   min-height: 100vh;
   background-color: #fecea8;
 }
+
 nav {
   background-color: #ef8c86;
   margin-bottom: 20px;
 }
+
 .nav-link {
   color: #2a363b;
 }
@@ -20,9 +23,11 @@ nav {
   font-size: 20px;
   margin-bottom: 30px;
 }
+
 .card-body {
   padding: 10px;
 }
+
 p {
   margin: 5px;
 }
@@ -47,13 +52,16 @@ h5 {
   text-align: center;
   border-radius: 15%;
 }
+
 .box h1 {
   color: #2a363b;
   text-transform: uppercase;
   font-weight: 500;
 }
+
 .box input[type="text"],
-.box input[type="password"] {
+.box input[type="password"],
+.box input[type="email"] {
   border: 0;
   background: none;
   display: block;
@@ -63,16 +71,21 @@ h5 {
   padding: 14px 10px;
   width: 200px;
   outline: none;
-  color: white;
+  color: #7164b4;;
   border-radius: 24px;
   transition: 0.25s;
 }
+
 .box input[type="text"]:focus,
-.box input[type="password"]:focus {
+.box input[type="password"]:focus,
+.box input[type="email"]:focus {
   width: 280px;
   border-color: #e84a5f;
 }
-.box input[type="submit"] {
+
+.box input[type="submit"],
+input[type="button"],
+button {
   border: 0;
   background: none;
   display: block;
@@ -86,7 +99,10 @@ h5 {
   transition: 0.25s;
   cursor: pointer;
 }
-.box input[type="submit"]:hover {
+
+.box input[type="submit"]:hover,
+input[type="button"]:hover,
+button:hover {
   background: #e84a5f;
 }
 
@@ -157,8 +173,8 @@ input[type="submit"]:hover {
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
-
-.box input[type="email"] {
+/* Estilos para todos los input dentro del formulario */
+#newProduct input:not([type="submit"]) {
   border: 0;
   background: none;
   display: block;
@@ -168,12 +184,27 @@ input[type="submit"]:hover {
   padding: 14px 10px;
   width: 200px;
   outline: none;
-  color: white;
+  color: #7164b4;
   border-radius: 24px;
   transition: 0.25s;
 }
-.box input[type="email"]:focus {
-  width: 280px;
-  border-color: #e84a5f;
+
+/* Estilos específicos para el input de tipo "submit" */
+#newProduct input[type="submit"] {
+  border: 0;
+  background: none;
+  display: block;
+  margin: 20px auto;
+  text-align: center;
+  border: 2px solid #ccabd8;
+  padding: 14px 40px;
+  outline: none;
+  color: #2a363b;
+  border-radius: 24px;
+  transition: 0.25s;
+  cursor: pointer;
 }
 
+#newProduct input[type="submit"]:hover {
+  background: #ccabd8;
+}
