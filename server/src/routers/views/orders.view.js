@@ -1,17 +1,21 @@
 import { Router } from "express";
-import { ManagerOrders, ManagerUser } from "../../data/mongo/manager.mongo.js";
+import {
+  ManagerOrders,
+  ManagerProduct,
+  ManagerUser,
+} from "../../data/mongo/manager.mongo.js";
 import passCallBack from "../../middlewares/passCallBack.mid.js";
 
 const ordersRouter = Router();
 
-ordersRouter.get("/",passCallBack("jwt"), async (req, res, next) => {
+ordersRouter.get("/", passCallBack("jwt"), async (req, res, next) => {
   try {
     const sortAndPaginate = {
       sort: { price: 1 },
       page: parseInt(req.query.page) || 1,
       limit: parseInt(req.query.limit) || 10,
     };
-    const user = await ManagerUser.readByEmail({ email: req.session.email });
+    const user = await ManagerUser.readByEmail(req.user.email);
     const filter = {
       uid: user._id,
     };
